@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Namu\\source\\repos\\StockManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\views\\storage\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\views\\storage\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "New.cshtml",
+              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Views\\Storage\\New.cshtml",
+              "RelativeDocumentMoniker": "StockManagement\\Views\\Storage\\New.cshtml",
+              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Views\\Storage\\New.cshtml",
+              "RelativeToolTip": "StockManagement\\Views\\Storage\\New.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T09:52:35.225Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
