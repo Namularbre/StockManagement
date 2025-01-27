@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement", "StockManagement\StockManagement.csproj", "{B242262C-65E8-43AA-B7DA-3B331F3853A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockManagement", "StockManagement\StockManagement.csproj", "{B242262C-65E8-43AA-B7DA-3B331F3853A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement_DTO", "StockManagement_DTO\StockManagement_DTO.csproj", "{7836F01A-4629-4F3C-A131-A271E150C4F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B242262C-65E8-43AA-B7DA-3B331F3853A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B242262C-65E8-43AA-B7DA-3B331F3853A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B242262C-65E8-43AA-B7DA-3B331F3853A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7836F01A-4629-4F3C-A131-A271E150C4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7836F01A-4629-4F3C-A131-A271E150C4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7836F01A-4629-4F3C-A131-A271E150C4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7836F01A-4629-4F3C-A131-A271E150C4F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

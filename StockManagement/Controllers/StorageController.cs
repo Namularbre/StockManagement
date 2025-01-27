@@ -15,7 +15,7 @@ namespace StockManagement.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            List<StorageViewModel> storages = await _storageService.FindAll(); 
+            var storages = await _storageService.FindAll();
 
             return View(storages);
         }
@@ -27,16 +27,38 @@ namespace StockManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> New(StorageViewModel model)
+        public async Task<IActionResult> New(CreateStorageViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                await _storageService.Insert(model);
+            if (!ModelState.IsValid) return View(model);
 
-                return RedirectToAction("Index");
+            // TODO : add error message
+            if (await _storageService.FindOneByName(model.Name) != null)
+            {
+                return View(model);
             }
 
-            return View(model);
+            await _storageService.Insert(model);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var storage = await _storageService.FindOneById(id);
+
+            if (storage != null)
+            {
+                if (storage.HasProducts)
+                {
+                    return Unauthorized("Vous ne pouvez pas supprimer un stockage avec des produits");
+                }
+
+                await _storageService.Delete(id);
+
+                return new OkResult();
+            }
+            return NotFound();
         }
     }
 }

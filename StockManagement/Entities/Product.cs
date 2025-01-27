@@ -11,5 +11,6 @@
         public Storage Storage { get; set; } = null!;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
+        public List<Alert>? Alerts {  get; set; } 
     }
 }

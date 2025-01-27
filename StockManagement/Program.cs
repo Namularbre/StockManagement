@@ -16,6 +16,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IStorageService, StorageService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
