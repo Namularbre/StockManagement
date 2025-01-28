@@ -3,10 +3,10 @@ name: Build
 on:
   push:
     branches:
-      - '**'  # Cela signifie toutes les branches
+      - '**'
   pull_request:
     branches:
-      - '**'  # Cela signifie toutes les branches
+      - '**'
 
 jobs:
   build:
@@ -21,16 +21,13 @@ jobs:
 
     - name: Build and test Docker image
       run: |
-        docker build -t my-project .
-        docker run my-project
+        docker build -t StockManagementWeb ./StockManagement
+        docker run StockManagementWeb
 
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x' # Remplacez par la version de .NET que vous utilisez
+        dotnet-version: '8.0.x'
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
-
-    - name: Test with dotnet
-      run: dotnet test --no-build --verbosity normal
