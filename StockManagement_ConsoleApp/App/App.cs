@@ -49,6 +49,17 @@ namespace StockManagement_ConsoleApp.App
                 errorCode = EConsoleAppError.AlertGeneration;
             }
 
+            try
+            {
+                await _alertService.PurgeOldAlerts();
+                _logger.LogInformation("Purged old alerts");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error while purging old alerts : {ex.Message}");
+                errorCode = EConsoleAppError.PurgeOldAlerts;
+            }
+
             _logger.LogInformation($"Finished with error code {errorCode}");
         }
     }

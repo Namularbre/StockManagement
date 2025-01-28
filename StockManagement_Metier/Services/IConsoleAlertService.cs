@@ -5,5 +5,6 @@ namespace StockManagement_Metier.Services
     public interface IConsoleAlertService
     {
         Task GenerateAlerts(List<Product> products);
+        Task PurgeOldAlerts();
     }
 }

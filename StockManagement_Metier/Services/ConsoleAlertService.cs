@@ -1,4 +1,5 @@
-﻿using StockManagement_Persistance.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using StockManagement_Persistance.Context;
 using StockManagement_Persistance.Entities;
 
 namespace StockManagement_Metier.Services
@@ -26,6 +27,30 @@ namespace StockManagement_Metier.Services
             _context.Alerts.Add(alert);
 
             await _context.SaveChangesAsync();
+        }
+
+        public async Task PurgeOldAlerts()
+        {
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    var oldAlerts = await _context.Alerts
+                        .Where(w => w.UpdatedAt < DateTime.Now.AddDays(-30))
+                        .ToListAsync();
+
+                    _context.Alerts.RemoveRange(oldAlerts);
+                    await _context.SaveChangesAsync();
+
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+
+                    throw;
+                }
+            }
         }
     }
 }
