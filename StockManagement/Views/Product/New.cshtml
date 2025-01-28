@@ -1,0 +1,36 @@
+﻿@model StockManagement_DTO.Global.ProductCreationDTO
+
+@{
+    ViewData["Title"] = "Creation produit";
+}
+
+<a asp-action="Index" asp-controller="Product" asp-route-storageID="@ViewBag.IdStorage" class="btn btn-secondary">Retour</a>
+
+<h5>Ajouter un produit</h5>
+
+<div>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Quantity" class="form-label"></label>
+            <input asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="MinQuantity" class="form-label"></label>
+            <input asp-for="MinQuantity" class="form-control" />
+            <span asp-validation-for="MinQuantity"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <input asp-for="IdStorage" type="hidden" value="@ViewBag.IdStorage"/>
+        <input type="submit" asp-action="New" asp-controller="Product" value="Ajouter" class="btn btn-primary" />
+    </form>
+</div>

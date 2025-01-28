@@ -1,0 +1,38 @@
+﻿@model List<StockManagement_DTO.Global.AlertListingDTO>
+
+@{
+    ViewBag["Title"] = "Alertes";
+}
+
+<h5>Liste des alertes</h5>
+
+@if (Model.Count != 0)
+{
+    <ul>
+        @foreach (var alert in Model)
+        {
+            <li>
+                <div>
+                    <div class="alert-title">
+                        <p>@alert.Author.UserName - @alert.CreatedAt.ToString("dd/MM/yyyy HH:mm")</p>
+                        <p>Mise à jour le @alert.UpdatedAt.ToString("dd/MM/yyyy HH:mm")</p>
+                    </div>
+                    <div class="alert-products">
+                        <ul>
+                            @foreach (var product in alert.Products)
+                            {
+                                <li>
+                                    <p>Il manque @product.Name. Qté minimum @product.MinQuantity, actuelle : @product.Quantity</p>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+}
+else 
+{
+    <p>Il n'y a pas d'alertes, tout baigne 😊</p>
+}

@@ -124,7 +124,6 @@ C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\Stoc
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.AssemblyInfoInputs.cache
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.AssemblyInfo.cs
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.csproj.CoreCompileInputs.cache
-C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.RazorAssemblyInfo.cache
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.RazorAssemblyInfo.cs
@@ -148,7 +147,6 @@ C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\Stoc
 C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\StockManagement.staticwebassets.endpoints.json
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\staticwebassets\msbuild.StockManagement.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\Microsoft.Build.dll
 C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\Microsoft.Build.Framework.dll
@@ -270,3 +268,11 @@ C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\runt
 C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\StockManagement_DTO.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\StockManagement_Metier.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\StockManagement_Persistance.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\StockManagement_DTO.pdb
+C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\StockManagement_Metier.pdb
+C:\Users\Namu\source\repos\StockManagement\StockManagement\bin\Debug\net8.0\StockManagement_Persistance.pdb
+C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\StockManagement.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Namu\source\repos\StockManagement\StockManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

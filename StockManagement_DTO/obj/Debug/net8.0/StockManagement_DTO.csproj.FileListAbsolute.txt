@@ -1,0 +1,16 @@
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.csproj.AssemblyReference.cache
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.AssemblyInfoInputs.cache
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.AssemblyInfo.cs
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.csproj.CoreCompileInputs.cache
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.sourcelink.json
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\bin\Debug\net8.0\StockManagement_DTO.deps.json
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\bin\Debug\net8.0\StockManagement_DTO.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\bin\Debug\net8.0\StockManagement_DTO.pdb
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\bin\Debug\net8.0\StockManagement_Persistance.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\bin\Debug\net8.0\StockManagement_Persistance.pdb
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockMan.FBDF8F41.Up2Date
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\refint\StockManagement_DTO.dll
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\StockManagement_DTO.pdb
+C:\Users\Namu\source\repos\StockManagement\StockManagement_DTO\obj\Debug\net8.0\ref\StockManagement_DTO.dll

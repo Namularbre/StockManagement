@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockManagement.Models;
-using StockManagement.Services;
+using StockManagement_DTO.Global;
+using StockManagement_Metier.Services;
 
 namespace StockManagement.Controllers
 {
@@ -27,7 +27,7 @@ namespace StockManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> New(CreateStorageViewModel model)
+        public async Task<IActionResult> New(StorageCreationDTO model)
         {
             if (!ModelState.IsValid) return View(model);
 

@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Namu\\source\\repos\\StockManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\services\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\services\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\views\\alert\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\views\\alert\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\controllers\\alertcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\controllers\\alertcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\wwwroot\\js\\removebuttoncomponent.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\wwwroot\\js\\removebuttoncomponent.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\models\\storageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\models\\storageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\views\\storage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\views\\storage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement\\services\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B242262C-65E8-43AA-B7DA-3B331F3853A2}|StockManagement\\StockManagement.csproj|solutionrelative:stockmanagement\\services\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46F8ED90-49F0-4DC3-A67A-AA2E002AE31B}|StockManagement_Metier\\StockManagement_Metier.csproj|c:\\users\\namu\\source\\repos\\stockmanagement\\stockmanagement_metier\\services\\alertservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F8ED90-49F0-4DC3-A67A-AA2E002AE31B}|StockManagement_Metier\\StockManagement_Metier.csproj|solutionrelative:stockmanagement_metier\\services\\alertservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,7 +21,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 276,
+          "DockedWidth": 492,
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -43,80 +31,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StorageService.cs",
-              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Services\\StorageService.cs",
-              "RelativeDocumentMoniker": "StockManagement\\Services\\StorageService.cs",
-              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Services\\StorageService.cs",
-              "RelativeToolTip": "StockManagement\\Services\\StorageService.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAiwEoAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T15:35:36.951Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Views\\Alert\\Index.cshtml",
+              "RelativeDocumentMoniker": "StockManagement\\Views\\Alert\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Views\\Alert\\Index.cshtml",
+              "RelativeToolTip": "StockManagement\\Views\\Alert\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-28T13:31:16.799Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "removeButtonComponent.js",
-              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\wwwroot\\js\\removeButtonComponent.js",
-              "RelativeDocumentMoniker": "StockManagement\\wwwroot\\js\\removeButtonComponent.js",
-              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\wwwroot\\js\\removeButtonComponent.js",
-              "RelativeToolTip": "StockManagement\\wwwroot\\js\\removeButtonComponent.js",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwC0AAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-27T15:34:01.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StorageViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Models\\StorageViewModel.cs",
-              "RelativeDocumentMoniker": "StockManagement\\Models\\StorageViewModel.cs",
-              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Models\\StorageViewModel.cs",
-              "RelativeToolTip": "StockManagement\\Models\\StorageViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Title": "AlertService.cs",
+              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_Metier\\Services\\AlertService.cs",
+              "RelativeDocumentMoniker": "StockManagement_Metier\\Services\\AlertService.cs",
+              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_Metier\\Services\\AlertService.cs",
+              "RelativeToolTip": "StockManagement_Metier\\Services\\AlertService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T15:27:02.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Views\\Storage\\Index.cshtml",
-              "RelativeDocumentMoniker": "StockManagement\\Views\\Storage\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Views\\Storage\\Index.cshtml",
-              "RelativeToolTip": "StockManagement\\Views\\Storage\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACQAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-27T15:21:38.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IStorageService.cs",
-              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Services\\IStorageService.cs",
-              "RelativeDocumentMoniker": "StockManagement\\Services\\IStorageService.cs",
-              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Services\\IStorageService.cs",
-              "RelativeToolTip": "StockManagement\\Services\\IStorageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T15:18:43.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T13:20:53.309Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StorageController.cs",
-              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Controllers\\StorageController.cs",
-              "RelativeDocumentMoniker": "StockManagement\\Controllers\\StorageController.cs",
-              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Controllers\\StorageController.cs",
-              "RelativeToolTip": "StockManagement\\Controllers\\StorageController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAswDgAAAApAAAAAAAAAA==",
+              "Title": "AlertController.cs",
+              "DocumentMoniker": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Controllers\\AlertController.cs",
+              "RelativeDocumentMoniker": "StockManagement\\Controllers\\AlertController.cs",
+              "ToolTip": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement\\Controllers\\AlertController.cs",
+              "RelativeToolTip": "StockManagement\\Controllers\\AlertController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T15:18:09.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T13:20:20.615Z"
             }
           ]
         }

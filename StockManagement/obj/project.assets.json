@@ -2917,6 +2917,48 @@
             "rid": "win"
           }
         }
+      },
+      "StockManagement_DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "StockManagement_Persistance": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StockManagement_DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StockManagement_DTO.dll": {}
+        }
+      },
+      "StockManagement_Metier/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "StockManagement_DTO": "1.0.0",
+          "StockManagement_Persistance": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StockManagement_Metier.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StockManagement_Metier.dll": {}
+        }
+      },
+      "StockManagement_Persistance/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "Microsoft.EntityFrameworkCore": "8.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
+        },
+        "compile": {
+          "bin/placeholder/StockManagement_Persistance.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StockManagement_Persistance.dll": {}
+        }
       }
     }
   },
@@ -8235,17 +8277,33 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "StockManagement_DTO/1.0.0": {
+      "type": "project",
+      "path": "../StockManagement_DTO/StockManagement_DTO.csproj",
+      "msbuildProject": "../StockManagement_DTO/StockManagement_DTO.csproj"
+    },
+    "StockManagement_Metier/1.0.0": {
+      "type": "project",
+      "path": "../StockManagement_Metier/StockManagement_Metier.csproj",
+      "msbuildProject": "../StockManagement_Metier/StockManagement_Metier.csproj"
+    },
+    "StockManagement_Persistance/1.0.0": {
+      "type": "project",
+      "path": "../StockManagement_Persistance/StockManagement_Persistance.csproj",
+      "msbuildProject": "../StockManagement_Persistance/StockManagement_Persistance.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 8.0.10",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.10",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.10",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.21.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7",
+      "StockManagement_DTO >= 1.0.0",
+      "StockManagement_Metier >= 1.0.0",
+      "StockManagement_Persistance >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8279,7 +8337,17 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_DTO\\StockManagement_DTO.csproj": {
+              "projectPath": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_DTO\\StockManagement_DTO.csproj"
+            },
+            "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_Metier\\StockManagement_Metier.csproj": {
+              "projectPath": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_Metier\\StockManagement_Metier.csproj"
+            },
+            "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_Persistance\\StockManagement_Persistance.csproj": {
+              "projectPath": "C:\\Users\\Namu\\source\\repos\\StockManagement\\StockManagement_Persistance\\StockManagement_Persistance.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -8302,15 +8370,7 @@
             "target": "Package",
             "version": "[8.0.10, )"
           },
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[8.0.10, )"
-          },
           "Microsoft.AspNetCore.Identity.UI": {
-            "target": "Package",
-            "version": "[8.0.10, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[8.0.10, )"
           },
