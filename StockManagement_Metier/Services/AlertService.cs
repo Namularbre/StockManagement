@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StockManagement_Persistance.Context;
-using StockManagement_Persistance.Entities;
 using StockManagement_DTO.Global;
 
 namespace StockManagement_Metier.Services

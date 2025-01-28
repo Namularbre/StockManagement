@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement_Metier", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement_Persistance", "StockManagement_Persistance\StockManagement_Persistance.csproj", "{CD29662C-D9C2-4CC3-ACB8-6E525EF50360}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement_ConsoleApp", "StockManagement_ConsoleApp\StockManagement_ConsoleApp.csproj", "{57CDB112-E891-45DE-A28B-A7A4E1B5C1FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{CD29662C-D9C2-4CC3-ACB8-6E525EF50360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD29662C-D9C2-4CC3-ACB8-6E525EF50360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD29662C-D9C2-4CC3-ACB8-6E525EF50360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CDB112-E891-45DE-A28B-A7A4E1B5C1FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CDB112-E891-45DE-A28B-A7A4E1B5C1FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CDB112-E891-45DE-A28B-A7A4E1B5C1FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CDB112-E891-45DE-A28B-A7A4E1B5C1FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

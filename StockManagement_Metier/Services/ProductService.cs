@@ -78,5 +78,13 @@ namespace StockManagement_Metier.Services
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<string?> GetProductStorageName(int idStorage)
+        {
+            return await _context.Storages
+                .Where(w => w.Id == idStorage)
+                .Select(s => s.Name)
+                .FirstOrDefaultAsync();
+        }
     }
 }

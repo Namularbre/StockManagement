@@ -1,7 +1,7 @@
 ﻿@model List<StockManagement_DTO.Global.AlertListingDTO>
 
 @{
-    ViewBag["Title"] = "Alertes";
+    ViewData["Title"] = "Alertes";
 }
 
 <h5>Liste des alertes</h5>
@@ -32,7 +32,7 @@
         }
     </ul>
 }
-else 
+else
 {
     <p>Il n'y a pas d'alertes, tout baigne 😊</p>
 }

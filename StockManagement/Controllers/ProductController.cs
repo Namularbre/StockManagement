@@ -24,14 +24,16 @@ namespace StockManagement.Controllers
             var products = await _productService.FindAllByStorage(idStorage);
 
             ViewBag.IdStorage = idStorage;
+            ViewBag.StorageName = await _productService.GetProductStorageName(idStorage);
 
             return View(products);
         }
 
         [HttpGet]
-        public IActionResult New(int idStorage)
+        public async Task<IActionResult> New(int idStorage)
         {
             ViewBag.IdStorage = idStorage;
+            ViewBag.StorageName = await _productService.GetProductStorageName(idStorage);
 
             return View();
         }

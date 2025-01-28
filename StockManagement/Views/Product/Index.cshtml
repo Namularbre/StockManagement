@@ -4,15 +4,18 @@
     ViewData["Title"] = "Produits";
 }
 
-<h5>Produits</h5>
+<h5>Produits dans @ViewBag.StorageName</h5>
 
-<a asp-action="New" asp-controller="Product" asp-route-idStorage="@ViewBag.IdStorage">Ajouter un produit</a>
+<div class="btn-group">
+    <a asp-action="Index" asp-controller="Storage" asp-action="Index" class="btn btn-secondary">Retour</a>
+    <a asp-action="New" asp-controller="Product" asp-route-idStorage="@ViewBag.IdStorage" class="btn btn-primary">Ajouter un produit</a>
+</div>
 
 @if (Model.Count != 0)
 {
-    <p>Produit dans @Model[0].StorageName</p>
+    <p>Produit dans @ViewBag.StorageName</p>
     <table class="table table-striped table-bordere">
-        <caption>Produit de @Model[0].StorageName</caption>
+        <caption>Produit de @ViewBag.StorageName</caption>
         <thead>
             <tr>
                 <th scope="col">@Html.DisplayNameFor(Model => Model[0].Name)</th>

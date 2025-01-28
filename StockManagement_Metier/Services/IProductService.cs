@@ -10,5 +10,6 @@ namespace StockManagement_Metier.Services
         bool ProductAsAlerts(Product product);
         Task Insert(ProductCreationDTO model);
         Task DeleteById(int id);
+        Task<string?> GetProductStorageName(int idStorage);
     }
 }
