@@ -15,18 +15,20 @@ namespace StockManagement_Metier.ConsoleServices
 
         public async Task GenerateAlerts(List<Product> products)
         {
-            var alert = new Alert()
+            if (products.Count != 0)
             {
-                Products = products,
-                Author = null,
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now,
-                Treated = false,
-            };
+                var alert = new Alert()
+                {
+                    Products = products,
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now,
+                    Treated = false,
+                };
 
-            _context.Alerts.Add(alert);
+                _context.Alerts.Add(alert);
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task PurgeOldAlerts()
@@ -44,7 +46,7 @@ namespace StockManagement_Metier.ConsoleServices
 
                     transaction.Commit();
                 }
-                catch (Exception ex)
+                catch
                 {
                     transaction.Rollback();
 

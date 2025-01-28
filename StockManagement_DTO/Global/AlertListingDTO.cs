@@ -12,9 +12,6 @@ namespace StockManagement_DTO.Global
         [Display(Name = "Traitée")]
         public bool Treated { get; set; }
 
-        [Display(Name = "Autheur")]
-        public IdentityUser Author { get; set; } = null!;
-
         [Display(Name = "Créée le")]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 

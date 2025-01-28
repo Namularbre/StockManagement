@@ -2,7 +2,7 @@
 using StockManagement_Persistance.Context;
 using StockManagement_Persistance.Entities;
 
-namespace StockManagement_Metier.Services
+namespace StockManagement_Metier.ConsoleServices
 {
     public class ConsoleProductService : IConsoleProductService
     {
@@ -16,7 +16,7 @@ namespace StockManagement_Metier.Services
         public async Task<List<Product>> GatherUnderMinimalQuantityProduct()
         {
             return await _context.Products
-                .Where(w => w.Quantity < w.MinQuantity)
+                .Where(w => w.Quantity <= w.MinQuantity)
                 .ToListAsync();
         }
     }

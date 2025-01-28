@@ -21,7 +21,6 @@ namespace StockManagement_Metier.Services
                 .Select(s => new AlertListingDTO()
                 {
                     Products = s.Products,
-                    Author = s.Author,
                     Treated = s.Treated,
                     CreatedAt = s.CreatedAt,
                     UpdatedAt = s.UpdatedAt,
