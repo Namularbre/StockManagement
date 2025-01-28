@@ -1,6 +1,6 @@
-﻿using StockManagement_Metier.Services;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using StockManagement_ConsoleApp.Utils;
+using StockManagement_Metier.ConsoleServices;
 
 namespace StockManagement_ConsoleApp.App
 {

@@ -2,7 +2,7 @@
 using StockManagement_Persistance.Context;
 using StockManagement_Persistance.Entities;
 
-namespace StockManagement_Metier.Services
+namespace StockManagement_Metier.ConsoleServices
 {
     public class ConsoleAlertService : IConsoleAlertService
     {

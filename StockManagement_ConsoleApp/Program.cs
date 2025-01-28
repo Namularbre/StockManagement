@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using StockManagement_Persistance.Context;
 using Microsoft.Extensions.Configuration;
 using StockManagement_ConsoleApp.App;
-using StockManagement_Metier.Services;
 using Microsoft.Extensions.Logging;
+using StockManagement_Metier.ConsoleServices;
 
 var builder = Host.CreateDefaultBuilder(args)
     .ConfigureLogging((context, logging) =>
