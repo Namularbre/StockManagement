@@ -12,8 +12,8 @@ using StockManagement_Persistance.Context;
 namespace StockManagement_Persistance.Migrations
 {
     [DbContext(typeof(StockManagementContext))]
-    [Migration("20250128105921_ProjetSpliting")]
-    partial class ProjetSpliting
+    [Migration("20250131233859_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -250,9 +250,6 @@ namespace StockManagement_Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AuthorId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -263,8 +260,6 @@ namespace StockManagement_Persistance.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AuthorId");
 
                     b.ToTable("Alerts");
                 });
@@ -396,15 +391,6 @@ namespace StockManagement_Persistance.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("StockManagement_Persistance.Entities.Alert", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId");
-
-                    b.Navigation("Author");
                 });
 
             modelBuilder.Entity("StockManagement_Persistance.Entities.Product", b =>

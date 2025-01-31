@@ -26,7 +26,7 @@ namespace StockManagement_Metier.Services
                     MinQuantity = s.MinQuantity,
                     StorageName = s.Storage.Name,
                     Description = s.Description,
-                    IdStorage = s.IdStorage,
+                    IdStorage = storageId,
                 })
                 .ToListAsync();
         }
