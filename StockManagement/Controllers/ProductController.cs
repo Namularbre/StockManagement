@@ -107,5 +107,37 @@ namespace StockManagement.Controllers
 
             return View(product);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> RemoveOneProductQuantity(int idProduct)
+        {
+            var product = await _productService.FindOneById(idProduct);
+
+            if (product == null)
+            {
+                return NotFound("Produit introuvable");
+            }
+            else if (product.Quantity <= 0)
+            {
+                return Unauthorized("Il n'y a déjà plus de produit");
+            }
+            else
+            {
+                var dto = new ProductUpdateDTO()
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Description = product.Description,
+                    IdStorage = product.Storage.Id,
+                    Quantity = product.Quantity - 1,
+                    MinQuantity = product.MinQuantity,
+
+                };
+
+                await _productService.UpdateProduct(dto);
+
+                return new OkResult();
+            }
+        }
     }
 }

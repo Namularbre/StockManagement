@@ -1,41 +1,34 @@
-﻿
-class RemoveButtonComponent extends HTMLElement {
-    #text;
+﻿class RemoveOneProductQuantityComponent extends HTMLElement {
     #action;
 
     constructor() {
         super();
 
-        this.#text = "Supprimer";
         this.#action = null;
     }
 
     connectedCallback() {
-        if (this.dataset.text) {
-            this.#text = this.dataset.text;
-        }
-
         this.#action = this.dataset.action;
 
         if (!this.#action) {
-            throw Error('[RemoveButtonComponent] Action undefined');
+            throw Error('[RemoveOneProductQuantityComponent] Action undefined');
         }
 
         this.render()
-            .catch(e => console.error('An error appenned while removing the element'));
+            .catch(e => console.error('An error appenned while decreasing the product quantity'));
     }
 
     async render() {
-        this.outerHTML = `<button data-action="${this.#action}" class="btn btn-danger btn-remove">${this.#text}</button>`;
+        this.outerHTML = `<button data-action="${this.#action}" class="btn btn-primary rounded decrease-product-qty">-</button>`;
 
         document.addEventListener('click', async (event) => {
-            let target = event.target;
+            const target = event.target;
 
-            if (target.classList.contains('btn-remove')) {
+            if (target.classList.contains('decrease-product-qty')) {
                 const action = target.dataset.action;
 
                 const response = await fetch(action, {
-                    method: 'DELETE',
+                    method: 'PUT',
                 });
 
                 const validErrorCodes = [200, 302];
@@ -43,7 +36,7 @@ class RemoveButtonComponent extends HTMLElement {
                 // status !ok
                 if (!validErrorCodes.includes(response.status)) {
                     const message = await response.text();
-                    alert(`Une erreur est survenue durant la suppression de la ressource : ${message}`);
+                    alert(`Une erreur est survenue durant la réduction de la quantité du produit : ${message}`);
                 }
 
                 // we reload the page, not the best practice, but it works
@@ -53,4 +46,4 @@ class RemoveButtonComponent extends HTMLElement {
     }
 }
 
-export default RemoveButtonComponent;
+export default RemoveOneProductQuantityComponent;
