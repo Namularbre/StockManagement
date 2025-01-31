@@ -1,0 +1,38 @@
+﻿@model StockManagement_DTO.Global.ProductUpdateDTO;
+
+@{
+    ViewData["Title"] = "Modifier un produit";
+}
+
+<h5>Modifier @Model.Name</h5>
+
+<a asp-action="Index" asp-controller="Product" asp-route-IdStorage="@Model.IdStorage" class="btn btn-secondary mb-3">Retour</a>
+
+<div>
+    <form method="post">
+        <input asp-for="Id" type="hidden" />
+        <input asp-for="IdStorage" type="hidden" />
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" value="@Model.Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" value="@Model.Description" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Quantity" class="form-label"></label>
+            <input asp-for="Quantity" value="@Model.Quantity" class="form-control" />
+            <span asp-validation-for="Quantity"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="MinQuantity" class="form-label"></label>
+            <input asp-for="MinQuantity" value="@Model.MinQuantity" class="form-control" />
+            <span asp-validation-for="MinQuantity"></span>
+        </div>
+
+        <button type="submit" asp-action="Update" class="btn btn-primary">Modifier</button>
+    </form>
+</div>

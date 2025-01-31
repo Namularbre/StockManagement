@@ -60,7 +60,7 @@ namespace StockManagement.Controllers
 
             if (product != null)
             {
-                if (!_productService.ProductAsAlerts(product))
+                if (!_productService.ProductHasAlerts(product))
                 {
                     await _productService.DeleteById(idProduct);
 
@@ -70,6 +70,42 @@ namespace StockManagement.Controllers
                 return Unauthorized("Vous ne pouvez pas supprimer un produit contenu dans des alertes");
             }
             return NotFound("Produit introuvable");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int idProduct)
+        {
+            var product = await _productService.FindOneById(idProduct);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var dto = new ProductUpdateDTO()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                IdStorage = product.Storage.Id,
+                Quantity = product.Quantity,
+                MinQuantity = product.MinQuantity,
+            };
+
+            return View(dto);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(ProductUpdateDTO product)
+        {
+            if (ModelState.IsValid)
+            {
+                await _productService.UpdateProduct(product);
+
+                return RedirectToAction("Index", new { idStorage = product.IdStorage });
+            }
+
+            return View(product);
         }
     }
 }

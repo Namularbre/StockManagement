@@ -7,9 +7,10 @@ namespace StockManagement_Metier.Services
     {
         Task<List<ProductListingDTO>> FindAllByStorage(int storageId);
         Task<Product?> FindOneById(int id);
-        bool ProductAsAlerts(Product product);
+        bool ProductHasAlerts(Product product);
         Task Insert(ProductCreationDTO model);
         Task DeleteById(int id);
         Task<string?> GetProductStorageName(int idStorage);
+        Task UpdateProduct(ProductUpdateDTO dto);
     }
 }

@@ -11,15 +11,18 @@ namespace StockManagement_DTO.Global
         [Required]
         [MinLength(1, ErrorMessage = "Ce champ doit contenir au moins un caractère")]
         [MaxLength(255, ErrorMessage = "Ce champ ne doit pas dépasser 255 caractères")]
+        [Display(Name = "Nom")]
         public string Name { get; set; } = null!;
 
         [Required]
         [DefaultValue(1)]
         [Range(1, int.MaxValue)]
+        [Display(Name = "Quantité")]
         public int Quantity { get; set; } = 1;
 
         [DefaultValue(0)]
         [Range(0, int.MaxValue)]
+        [Display(Name = "Quantité minimale")]
         public int? MinQuantity { get; set; } = 0;
 
         [Required]

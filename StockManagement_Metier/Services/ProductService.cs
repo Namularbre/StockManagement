@@ -35,10 +35,11 @@ namespace StockManagement_Metier.Services
         {
             return await _context.Products
                 .Where(w => w.Id == id)
+                .Include(i => i.Storage)
                 .FirstOrDefaultAsync();
         }
 
-        public bool ProductAsAlerts(Product product) => product.Alerts != null && product.Alerts.Count > 0;
+        public bool ProductHasAlerts(Product product) => product.Alerts != null && product.Alerts.Count > 0;
 
         public async Task Insert(ProductCreationDTO model)
         {
@@ -85,6 +86,31 @@ namespace StockManagement_Metier.Services
                 .Where(w => w.Id == idStorage)
                 .Select(s => s.Name)
                 .FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dto">MUST contain a VALID ID</param>
+        /// <returns></returns>
+        public async Task UpdateProduct(ProductUpdateDTO dto)
+        {
+            var product = await _context.Products
+                .Where(w => w.Id == dto.Id)
+                .FirstOrDefaultAsync();
+
+            if (product == null)
+            {
+                return;
+            }
+
+            product.Name = dto.Name;
+            product.Description = dto.Description;
+            product.Quantity = dto.Quantity;
+            product.MinQuantity = dto.MinQuantity != null ? (int) dto.MinQuantity : 0;
+
+            _context.Products.Update(product);
+            await _context.SaveChangesAsync();
         }
     }
 }
