@@ -111,6 +111,7 @@ namespace StockManagement_Metier.Services
             product.Quantity = dto.Quantity;
             product.MinQuantity = dto.MinQuantity != null ? (int) dto.MinQuantity : 0;
             product.IsEssential = dto.IsEssential;
+            product.UpdatedAt = DateTime.Now;
 
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
