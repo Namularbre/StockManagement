@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using StockManagement_Persistance.Entities;
 
 namespace StockManagement_DTO.Global
 {
@@ -35,5 +36,9 @@ namespace StockManagement_DTO.Global
         [Display(Name = "Est essentiel")]
         [DefaultValue(false)]
         public bool IsEssential { get; set; } = false;
+
+        [Required]
+        [Display(Name = "Catégorie")]
+        public int IdCategory {  get; set; }
     }
 }

@@ -25,5 +25,8 @@ namespace StockManagement_DTO.Global
 
         [Display(Name = "Est essentiel")]
         public bool IsEssential {  get; set; }
+
+        [Display(Name = "Catégorie")]
+        public string CategoryName { get; set; } = null!;
     }
 }

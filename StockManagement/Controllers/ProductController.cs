@@ -7,10 +7,12 @@ namespace StockManagement.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
+            _categoryService = categoryService;
         }
 
         /// <summary>
@@ -33,6 +35,7 @@ namespace StockManagement.Controllers
         public async Task<IActionResult> New(int idStorage)
         {
             ViewBag.IdStorage = idStorage;
+            ViewBag.Categories = await _categoryService.FindAll();
             ViewBag.StorageName = await _productService.GetProductStorageName(idStorage);
 
             return View();
@@ -43,12 +46,22 @@ namespace StockManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _productService.Insert(model);
+                try
+                {
+                    await _productService.Insert(model);
 
-                return RedirectToAction("Index", new { idStorage = model.IdStorage });
+                    return RedirectToAction("Index", new { idStorage = model.IdStorage });
+                }
+                catch (Exception)
+                {
+                    // Category is not found (The user CHANGED the id in the input to make it false
+                    return Unauthorized("You must give a category that exists");
+                }
             }
 
             ViewBag.IdStorage = model.IdStorage;
+            ViewBag.Categories = await _categoryService.FindAll();
+            ViewBag.StorageName = await _productService.GetProductStorageName(model.IdStorage);
 
             return View(model);
         }
@@ -82,6 +95,8 @@ namespace StockManagement.Controllers
                 return NotFound();
             }
 
+            ViewBag.Categories = await _categoryService.FindAll();
+
             var dto = new ProductUpdateDTO()
             {
                 Id = product.Id,
@@ -90,6 +105,7 @@ namespace StockManagement.Controllers
                 IdStorage = product.Storage.Id,
                 Quantity = product.Quantity,
                 MinQuantity = product.MinQuantity,
+                IdCategory = product.Category.Id
             };
 
             return View(dto);

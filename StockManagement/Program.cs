@@ -22,6 +22,7 @@ internal class Program
         builder.Services.AddScoped<IStorageService, StorageService>();
         builder.Services.AddScoped<IProductService, ProductService>();
         builder.Services.AddScoped<IAlertService, AlertService>();
+        builder.Services.AddScoped<ICategoryService, CategoryService>();
 
         var app = builder.Build();
 

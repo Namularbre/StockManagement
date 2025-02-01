@@ -39,10 +39,27 @@
             <input asp-for="MinQuantity" value="@Model.MinQuantity" class="form-control" />
             <span asp-validation-for="MinQuantity"></span>
         </div>
-        <div class="form-group mb-3">
+        <div class="form-group">
             <label asp-for="IsEssential" class="form-label"></label>
             <input asp-for="IsEssential" class="form-check" />
             <span asp-validation-for="IsEssential"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="IdCategory" class="form-label"></label>
+            <select asp-for="IdCategory" class="form-control">
+                @foreach (var category in ViewBag.Categories)
+                {
+                    @if (category.Id != Model.IdCategory)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@category.Id" selected>@category.Name</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="IdCategory"></span>
         </div>
         <button type="submit" asp-action="Update" class="btn btn-primary">Modifier</button>
     </form>

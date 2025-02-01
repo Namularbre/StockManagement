@@ -18,6 +18,7 @@ namespace StockManagement_Metier.Services
         {
             return await _context.Products
                 .Where(w => w.Storage.Id == storageId)
+                .Include(i => i.Category)
                 .Select(s => new ProductListingDTO
                 {
                     Id = s.Id,
@@ -27,7 +28,8 @@ namespace StockManagement_Metier.Services
                     StorageName = s.Storage.Name,
                     Description = s.Description,
                     IdStorage = storageId,
-                    IsEssential = s.IsEssential
+                    IsEssential = s.IsEssential,
+                    CategoryName = s.Category.Name,
                 })
                 .ToListAsync();
         }
@@ -37,6 +39,7 @@ namespace StockManagement_Metier.Services
             return await _context.Products
                 .Where(w => w.Id == id)
                 .Include(i => i.Storage)
+                .Include(i => i.Category)
                 .FirstOrDefaultAsync();
         }
 
@@ -53,6 +56,15 @@ namespace StockManagement_Metier.Services
                 return;
             }
 
+            var category = await _context.Categories
+                .Where(w => w.Id == model.IdCategory)
+                .FirstOrDefaultAsync();
+
+            if (category == null)
+            {
+                throw new Exception($"Category not found, id: {model.IdCategory}");
+            }
+
             var product = new Product
             {
                 Name = model.Name,
@@ -61,6 +73,7 @@ namespace StockManagement_Metier.Services
                 Storage = storage,
                 Description = model.Description,
                 IsEssential = model.IsEssential,
+                Category = category
             };
 
             await _context.AddAsync(product);
@@ -93,7 +106,7 @@ namespace StockManagement_Metier.Services
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="dto">MUST contain a VALID ID</param>
+        /// <param name="dto">MUST contains a VALID ID</param>
         /// <returns></returns>
         public async Task UpdateProduct(ProductUpdateDTO dto)
         {
@@ -106,12 +119,22 @@ namespace StockManagement_Metier.Services
                 return;
             }
 
+            var category = await _context.Categories
+                .Where(w => w.Id == dto.IdCategory)
+                .FirstOrDefaultAsync();
+
+            if (category == null)
+            {
+                return;
+            }
+
             product.Name = dto.Name;
             product.Description = dto.Description;
             product.Quantity = dto.Quantity;
             product.MinQuantity = dto.MinQuantity != null ? (int) dto.MinQuantity : 0;
             product.IsEssential = dto.IsEssential;
             product.UpdatedAt = DateTime.Now;
+            product.Category = category;
 
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
