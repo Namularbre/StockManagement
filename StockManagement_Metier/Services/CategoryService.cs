@@ -54,5 +54,26 @@ namespace StockManagement_Metier.Services
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Category MUST exists in database
+        /// </remarks>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        public async Task Update(CategoryUpdateDTO dto)
+        {
+            var category = await _context.Categories
+                .Where(w => w.Id ==  dto.Id)
+                .FirstAsync();
+
+            category.Name = dto.Name;
+            category.Id = dto.Id;
+
+            _context.Update(category);
+            await _context.SaveChangesAsync();
+        }
     }
 }

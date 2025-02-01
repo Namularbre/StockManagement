@@ -21,7 +21,7 @@ namespace StockManagement.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> New()
+        public IActionResult New()
         {
             var dto = new CategoryCreationDTO();
 
@@ -46,6 +46,41 @@ namespace StockManagement.Controllers
             }
 
             return View(dto);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int idCategory)
+        {
+            var category = await _categoryService.FindOneById(idCategory);
+
+            if (category == null)
+            {
+                return Unauthorized("La catégorie n'existe pas");
+            }
+
+            var dto = new CategoryUpdateDTO()
+            {
+                Id = idCategory,
+                Name = category.Name,
+            };
+
+            return View(dto);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(CategoryUpdateDTO dto)
+        {
+            var category = await _categoryService.FindOneById(dto.Id);
+
+            if (category != null)
+            {
+                await _categoryService.Update(dto);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(dto);
+            }
         }
     }
 }
