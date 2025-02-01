@@ -34,12 +34,16 @@
             <input asp-for="Quantity" value="@Model.Quantity" class="form-control" />
             <span asp-validation-for="Quantity"></span>
         </div>
-        <div class="form-group mb-3">
+        <div class="form-group">
             <label asp-for="MinQuantity" class="form-label"></label>
             <input asp-for="MinQuantity" value="@Model.MinQuantity" class="form-control" />
             <span asp-validation-for="MinQuantity"></span>
         </div>
-
+        <div class="form-group mb-3">
+            <label asp-for="IsEssential" class="form-label"></label>
+            <input asp-for="IsEssential" class="form-check" />
+            <span asp-validation-for="IsEssential"></span>
+        </div>
         <button type="submit" asp-action="Update" class="btn btn-primary">Modifier</button>
     </form>
 </div>

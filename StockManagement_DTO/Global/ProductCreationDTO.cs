@@ -31,5 +31,9 @@ namespace StockManagement_DTO.Global
         [MinLength(1, ErrorMessage = "Ce champ doit contenir au moins un caractère")]
         [MaxLength(255, ErrorMessage = "Ce champ ne doit pas dépasser 255 caractères")]
         public string? Description { get; set; }
+
+        [Display(Name = "Est essentiel")]
+        [DefaultValue(false)]
+        public bool IsEssential { get; set; } = false;
     }
 }

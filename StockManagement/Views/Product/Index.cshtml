@@ -22,6 +22,7 @@
                 <th scope="col">@Html.DisplayNameFor(Model => Model[0].Quantity)</th>
                 <th scope="col">@Html.DisplayNameFor(Model => Model[0].MinQuantity)</th>
                 <th scope="col">@Html.DisplayNameFor(Model => Model[0].Description)</th>
+                <th scope="col">@Html.DisplayNameFor(Model => Model[0].IsEssential)</th>
                 <th scope="col">Modification</th>
                 <th scope="col">Suppression</th>
                 <th scope="col">Retirer 1 du stock</th>
@@ -35,6 +36,14 @@
                     <td>@product.Quantity</td>
                     <td>@product.MinQuantity</td>
                     <td>@product.Description</td>
+                    @if (product.IsEssential)
+                    {
+                        <td>Vrai</td>
+                    }
+                    else 
+                    {
+                        <td>Faux</td>
+                    }
                     <td>
                         <a asp-action="Update" asp-controller="Product" asp-route-IdProduct="@product.Id" class="btn btn-primary">Update</a>
                     </td>

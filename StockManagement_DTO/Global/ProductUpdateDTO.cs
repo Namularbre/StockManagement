@@ -31,5 +31,9 @@ namespace StockManagement_DTO.Global
         [Range(0, int.MaxValue)]
         [Display(Name = "Quantité minimale")]
         public int? MinQuantity { get; set; } = 0;
+
+        [DefaultValue(false)]
+        [Display(Name = "Est essentiel")]
+        public bool IsEssential { get; set; } = false;
     }
 }

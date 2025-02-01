@@ -22,5 +22,8 @@ namespace StockManagement_DTO.Global
         public string? Description { get; set; }
 
         public int IdStorage { get; set; }
+
+        [Display(Name = "Est essentiel")]
+        public bool IsEssential {  get; set; }
     }
 }

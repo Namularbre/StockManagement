@@ -27,6 +27,7 @@ namespace StockManagement_Metier.Services
                     StorageName = s.Storage.Name,
                     Description = s.Description,
                     IdStorage = storageId,
+                    IsEssential = s.IsEssential
                 })
                 .ToListAsync();
         }
@@ -59,6 +60,7 @@ namespace StockManagement_Metier.Services
                 MinQuantity = model.MinQuantity != null ? (int)model.MinQuantity : 0,
                 Storage = storage,
                 Description = model.Description,
+                IsEssential = model.IsEssential,
             };
 
             await _context.AddAsync(product);
@@ -108,6 +110,7 @@ namespace StockManagement_Metier.Services
             product.Description = dto.Description;
             product.Quantity = dto.Quantity;
             product.MinQuantity = dto.MinQuantity != null ? (int) dto.MinQuantity : 0;
+            product.IsEssential = dto.IsEssential;
 
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
