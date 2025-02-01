@@ -16,7 +16,7 @@ namespace StockManagement_Metier.ConsoleServices
         public async Task<List<Product>> GatherUnderMinimalQuantityProduct()
         {
             return await _context.Products
-                .Where(w => w.Quantity <= w.MinQuantity)
+                .Where(w => w.Quantity <= w.MinQuantity && w.IsEssential)
                 .ToListAsync();
         }
     }
