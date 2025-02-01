@@ -7,5 +7,7 @@ namespace StockManagement_Metier.Services
     {
         Task<List<CategoryListingDTO>> FindAll();
         Task<Category?> FindOneById(int idCategory);
+        Task<Category?> FindOneByName(string name);
+        Task Insert(CategoryCreationDTO dto);
     }
 }

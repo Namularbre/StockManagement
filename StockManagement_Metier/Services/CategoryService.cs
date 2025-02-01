@@ -31,5 +31,28 @@ namespace StockManagement_Metier.Services
                 .Where(w => w.Id == idCategory)
                 .FirstOrDefaultAsync();
         }
+
+        public async Task<Category?> FindOneByName(string name)
+        {
+            return await _context.Categories
+                .Where(w => w.Name == name)
+                .FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        public async Task Insert(CategoryCreationDTO dto)
+        {
+            var category = new Category()
+            {
+                Name = dto.Name
+            };
+
+            await _context.Categories.AddAsync(category);
+            await _context.SaveChangesAsync();
+        }
     }
 }
