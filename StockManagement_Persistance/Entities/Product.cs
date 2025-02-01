@@ -12,5 +12,6 @@
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
         public List<Alert>? Alerts { get; set; }
         public bool IsEssential { get; set; } = false;
+        public Category Category { get; set; } = null!;
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StockManagement_Persistance.Context;
 
@@ -11,9 +12,11 @@ using StockManagement_Persistance.Context;
 namespace StockManagement_Persistance.Migrations
 {
     [DbContext(typeof(StockManagementContext))]
-    partial class StockManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20250201122249_AddCategoryToProducts")]
+    partial class AddCategoryToProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,44 +278,7 @@ namespace StockManagement_Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Snacks"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Produit d'entretien"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Produit sanitaire"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Produit chat"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Repas midi"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Repas soir"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Petit dej"
-                        });
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("StockManagement_Persistance.Entities.Product", b =>
@@ -381,29 +347,6 @@ namespace StockManagement_Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Storages");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5540),
-                            Name = "Cuisine",
-                            UpdatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5599)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5601),
-                            Name = "Salle de bain",
-                            UpdatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5602)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5604),
-                            Name = "Sellier",
-                            UpdatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5605)
-                        });
                 });
 
             modelBuilder.Entity("AlertProduct", b =>
