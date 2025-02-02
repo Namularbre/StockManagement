@@ -82,5 +82,23 @@ namespace StockManagement.Controllers
                 return View(dto);
             }
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int idCategory)
+        {
+            var category = await _categoryService.FindOneById(idCategory);
+
+            if (category != null)
+            {
+                if (category.Products == null || category.Products != null && category.Products.Count == 0)
+                {
+                    await _categoryService.Delete(category);
+                }
+
+                return Unauthorized("Vous ne pouvez pas supprimer une catégorie qui contient des produits");
+            }
+            
+            return NotFound("Catégorie introuvable");
+        }
     }
 }

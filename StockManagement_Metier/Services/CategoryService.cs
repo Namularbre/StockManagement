@@ -21,6 +21,7 @@ namespace StockManagement_Metier.Services
                 {
                     Id = s.Id,
                     Name = s.Name,
+                    HasProducts = s.Products != null && s.Products.Count > 0,
                 })
                 .ToListAsync();
         }
@@ -29,6 +30,7 @@ namespace StockManagement_Metier.Services
         {
             return await _context.Categories
                 .Where(w => w.Id == idCategory)
+                .Include(i => i.Products)
                 .FirstOrDefaultAsync();
         }
 
@@ -73,6 +75,13 @@ namespace StockManagement_Metier.Services
             category.Id = dto.Id;
 
             _context.Update(category);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task Delete(Category category)
+        {
+            _context.Categories.Remove(category);
+
             await _context.SaveChangesAsync();
         }
     }

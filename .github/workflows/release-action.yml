@@ -1,0 +1,62 @@
+name: Build and Release .NET 8
+
+on:
+  push:
+    tags:
+      - 'v*'  # Execurte the action only with tags that starts with v
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build project
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish application
+        run: dotnet publish -c Release -o out
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: app
+          path: out/
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: app
+          path: out/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            🚀 Nouvelle version publiée !
+            - Version: ${{ github.ref_name }}
+            - Compilation automatique via GitHub Actions.
+          draft: false
+          prerelease: false
+          files: out/**
+

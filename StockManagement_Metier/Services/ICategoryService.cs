@@ -10,5 +10,6 @@ namespace StockManagement_Metier.Services
         Task<Category?> FindOneByName(string name);
         Task Insert(CategoryCreationDTO dto);
         Task Update(CategoryUpdateDTO dto);
+        Task Delete(Category category);
     }
 }

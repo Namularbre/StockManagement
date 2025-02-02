@@ -15,6 +15,7 @@
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
         </tr>
         @foreach (var category in Model)
         {
@@ -22,6 +23,16 @@
                 <td>@category.Name</td>
                 <td>
                     <a asp-action="Update" asp-controller="Category" asp-route-idCategory="@category.Id" class="btn btn-primary">Renommer</a>
+                </td>
+                <td>
+                    @if (category.HasProducts)
+                    {
+                        <button class="btn btn-danger disabled">Supprimer</button>
+                    }
+                    else
+                    {
+                        <v-btn-remove data-action="@Url.Action("Delete", new { idCategory = category.Id })"></v-btn-remove>
+                    }
                 </td>
             </tr>
         }
