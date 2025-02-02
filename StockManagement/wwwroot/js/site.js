@@ -1,4 +1,5 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿import RemoveButtonComponent from './removeButtonComponent.js';
+import RemoveOneProductQuantityComponent from './removeOneProductQuantityComponent.js';
 
-// Write your JavaScript code.
+customElements.define('v-btn-remove', RemoveButtonComponent);
+customElements.define('v-btn-remove-one-qty', RemoveOneProductQuantityComponent);

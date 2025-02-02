@@ -1,18 +1,23 @@
-﻿@model List<StockManagement.Models.StorageViewModel>;
+﻿@model List<StockManagement_DTO.Global.StorageListingDTO>;
 
 @{
     ViewData["Title"] = "Stockages";
 }
 
+<div class="btn-group mb-3">
+    <a asp-action="New" asp-controller="Storage" class="btn btn-primary">Ajouter un stockage</a>
+</div>
+
 <div class="container">
     @if (Model.Count() > 0)
     {
         <table class="table table-striped table-bordered">
-            <caption>Liste de stockage</caption>
+            <caption>Liste des stockages</caption>
             <thead>
                 <tr>
                     <th scope="col">@Html.DisplayNameFor(model => model[0].Name)</th>
                     <th scope="col">Contenu</th>
+                    <th scope="col">Suppression</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,7 +25,17 @@
                 {
                     <tr>
                         <td>@storage.Name</td>
-                        <td><a asp-action="Details" asp-controller="Storage" asp-route-id="@storage.Id">Contenu</a></td>
+                        <td><a asp-action="Index" asp-controller="Product" asp-route-idStorage="@storage.Id">Contenu</a></td>
+                        <td>
+                            @if (storage.HasProducts)
+                            {
+                                <button class="btn btn-danger disabled">Supprimer</button>
+                            }
+                            else 
+                            {
+                                <v-btn-remove data-action="@Url.Action("Delete", new { id = storage.Id })"></v-btn-remove>
+                            }
+                        </td>
                     </tr>
                 }
             </tbody>

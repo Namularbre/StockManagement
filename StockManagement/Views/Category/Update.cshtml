@@ -1,0 +1,19 @@
+﻿@model StockManagement_DTO.Global.CategoryUpdateDTO;
+
+@{
+    ViewData["Title"] = "Renommé une catégorie";
+}
+
+<h5>Renommé une catégorie</h5>
+
+<div>
+    <form method="post">
+        <div class="form-group mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" value="@Model.Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <input type="hidden" asp-for="Id" value="@Model.Id" />
+        <button type="submit" asp-action="Update" asp-controller="Category" class="btn btn-primary">Renommer</button>
+    </form>
+</div>

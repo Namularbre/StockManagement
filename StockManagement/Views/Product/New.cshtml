@@ -1,0 +1,51 @@
+﻿@model StockManagement_DTO.Global.ProductCreationDTO
+
+@{
+    ViewData["Title"] = "Creation produit";
+}
+
+<a asp-action="Index" asp-controller="Product" asp-route-idStorage="@ViewBag.IdStorage" class="btn btn-secondary">Retour</a>
+
+<h5>Ajouter un produit dans @ViewBag.StorageName</h5>
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Quantity" class="form-label"></label>
+            <input asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MinQuantity" class="form-label"></label>
+            <input asp-for="MinQuantity" class="form-control" />
+            <span asp-validation-for="MinQuantity"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsEssential" class="form-label"></label>
+            <input asp-for="IsEssential" class="form-check" />
+            <span asp-validation-for="IsEssential"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="IdCategory" class="form-label"></label>
+            <select asp-for="IdCategory" class="form-control">
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="IdCategory"></span>
+        </div>
+        <input asp-for="IdStorage" type="hidden" value="@ViewBag.IdStorage"/>
+        <input type="submit" asp-action="New" asp-controller="Product" value="Ajouter" class="btn btn-primary" />
+    </form>
+</div>

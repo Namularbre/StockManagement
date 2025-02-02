@@ -1,4 +1,4 @@
-﻿@model StockManagement.Models.StorageViewModel;
+﻿@model StockManagement_DTO.Global.StorageCreationDTO;
 
 @{
     ViewData["Title"] = "Creation stockage";
@@ -7,12 +7,12 @@
 <a asp-action="Index" asp-controller="Storage" class="btn btn-secondary mb-3">Retour</a>
 
 <div>
-    <form>
-        <input type="hidden" asp-for="Id" />
+    <form method="post">
         <div class="mb-3">
             <label asp-for="Name" class="form-label"></label>
             <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
         </div>
-        <input type="submit" value="Créer"/>
+        <input type="submit" asp-action="New" asp-controller="Storage" value="Créer" class="btn btn-primary" />
     </form>
 </div>

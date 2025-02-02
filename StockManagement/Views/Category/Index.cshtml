@@ -1,0 +1,33 @@
+﻿@model List<StockManagement_DTO.Global.CategoryListingDTO>;
+
+@{
+    ViewData["Title"] = "Catégories";
+}
+
+<h5>Catégories</h5>
+
+<a asp-action="New" asp-controller="Category" class="btn btn-primary mb-3">Ajouter une catégorie</a>
+
+@if (Model.Count > 0)
+{
+    <table class="table table-bordered table-striped">
+        <caption>Liste des catégories</caption>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Modifier</th>
+        </tr>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Category" asp-route-idCategory="@category.Id" class="btn btn-primary">Renommer</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>Il n'y a pas de catégories</p>
+}
