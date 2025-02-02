@@ -43,6 +43,28 @@ namespace StockManagement_Metier.Services
                 .FirstOrDefaultAsync();
         }
 
+        public async Task<List<ProductListingDTO>> Search(ProductSearchDTO search)
+        {
+            return await _context.Products
+                .Include(i => i.Storage)
+                .Include(i => i.Category)
+                .Where(w => search.Name != null ? search.Name == w.Name : true)
+                .Where(w => search.IdStorage != null ? search.IdStorage == w.Storage.Id : true)
+                .Where(w => search.IdCategory != null ? search.IdCategory == w.Category.Id : true)
+                .Select(s => new ProductListingDTO()
+                {
+                    Id = s.Id,
+                    Name = s.Name,
+                    Description= s.Description,
+                    Quantity = s.Quantity,
+                    MinQuantity = s.MinQuantity,
+                    StorageName = s.Storage.Name,
+                    CategoryName = s.Category.Name,
+                    IsEssential= s.IsEssential,
+                })
+                .ToListAsync();
+        }
+
         public bool ProductHasAlerts(Product product) => product.Alerts != null && product.Alerts.Count > 0;
 
         public async Task Insert(ProductCreationDTO model)

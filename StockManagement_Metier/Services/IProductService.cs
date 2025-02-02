@@ -12,5 +12,6 @@ namespace StockManagement_Metier.Services
         Task DeleteById(int id);
         Task<string?> GetProductStorageName(int idStorage);
         Task UpdateProduct(ProductUpdateDTO dto);
+        Task<List<ProductListingDTO>> Search(ProductSearchDTO search);
     }
 }

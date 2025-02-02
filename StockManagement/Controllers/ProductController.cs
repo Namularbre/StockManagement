@@ -8,11 +8,13 @@ namespace StockManagement.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IStorageService _storageService;
 
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        public ProductController(IProductService productService, ICategoryService categoryService, IStorageService storageService)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _storageService = storageService;
         }
 
         /// <summary>
@@ -27,6 +29,27 @@ namespace StockManagement.Controllers
 
             ViewBag.IdStorage = idStorage;
             ViewBag.StorageName = await _productService.GetProductStorageName(idStorage);
+
+            return View(products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Search(ProductSearchDTO? dto)
+        {
+            if (dto == null)
+            {
+                dto = new ProductSearchDTO();
+            }
+
+            ViewBag.Storages = await _storageService.FindAll();
+            ViewBag.Categories = await _categoryService.FindAll();
+
+            ViewBag.Search = dto;
+
+            var products = await _productService.Search(dto);
+
+            ViewBag.Search.IdCategory = dto.IdCategory;
+            ViewBag.Search.IdStorage = dto.IdStorage;
 
             return View(products);
         }
@@ -147,7 +170,7 @@ namespace StockManagement.Controllers
                     IdStorage = product.Storage.Id,
                     Quantity = product.Quantity - 1,
                     MinQuantity = product.MinQuantity,
-
+                    IdCategory = product.Category.Id
                 };
 
                 await _productService.UpdateProduct(dto);
