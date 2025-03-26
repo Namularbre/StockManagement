@@ -386,23 +386,23 @@ namespace StockManagement_Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5540),
+                            CreatedAt = new DateTime(2025, 3, 26, 21, 14, 29, 560, DateTimeKind.Local).AddTicks(2483),
                             Name = "Cuisine",
-                            UpdatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5599)
+                            UpdatedAt = new DateTime(2025, 3, 26, 21, 14, 29, 560, DateTimeKind.Local).AddTicks(2551)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5601),
+                            CreatedAt = new DateTime(2025, 3, 26, 21, 14, 29, 560, DateTimeKind.Local).AddTicks(2558),
                             Name = "Salle de bain",
-                            UpdatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5602)
+                            UpdatedAt = new DateTime(2025, 3, 26, 21, 14, 29, 560, DateTimeKind.Local).AddTicks(2559)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5604),
+                            CreatedAt = new DateTime(2025, 3, 26, 21, 14, 29, 560, DateTimeKind.Local).AddTicks(2562),
                             Name = "Sellier",
-                            UpdatedAt = new DateTime(2025, 2, 1, 13, 44, 26, 899, DateTimeKind.Local).AddTicks(5605)
+                            UpdatedAt = new DateTime(2025, 3, 26, 21, 14, 29, 560, DateTimeKind.Local).AddTicks(2564)
                         });
                 });
 
