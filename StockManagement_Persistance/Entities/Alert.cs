@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace StockManagement_Persistance.Entities
+﻿namespace StockManagement_Persistance.Entities
 {
     public class Alert
     {
