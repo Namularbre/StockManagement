@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using StockManagement.Models;
+using StockManagement_Metier.Services;
 using System.Diagnostics;
 
 namespace StockManagement.Controllers
@@ -7,14 +8,19 @@ namespace StockManagement.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
+            _productService = productService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ViewBag.Products = await _productService.FindRecentlyUpdatedOnes();
+            ViewBag.ProductInAlertCount = await _productService.FindAmountOfProductInLastAlert();
+
             return View();
         }
 

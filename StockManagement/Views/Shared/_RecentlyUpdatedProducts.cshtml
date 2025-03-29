@@ -1,0 +1,33 @@
+﻿@*
+    This partial view is used to display rencently updated products.
+*@
+@model List<StockManagement_DTO.Global.ProductRecentlyUpdatedDTO>
+
+<h5>Produit modifiés cette semaine</h5>
+@if (Model.Count > 0)
+{
+    <table class="table table-bordered table-striped">
+        <caption>Liste des produits récemment modifiés</caption>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(Model => Model[0].Name)</th>
+            <th scope="col">@Html.DisplayNameFor(Model => Model[0].UpdatedAt)</th>
+            <th scope="col">@Html.DisplayNameFor(Model => Model[0].Quantity)</th>
+            <th scope="col">@Html.DisplayNameFor(Model => Model[0].MinQuantity)</th>
+            <th scope="col">Détails</th>
+        </tr>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.UpdatedAt.ToString("dd/MM/yy")</td>
+                <td>@product.Quantity</td>
+                <td>@product.MinQuantity</td>
+                <td><a asp-controller="Product" asp-action="Search" asp-route-idStorage="@product.StorageId" asp-route-name="@product.Name">détails</a></td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>Il n'y a pas eu de changement sur des produits</p>
+}

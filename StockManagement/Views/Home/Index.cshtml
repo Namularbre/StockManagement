@@ -6,3 +6,30 @@
 <div class="text-center">
     <h1>Bienvenue sur StockManagement !</h1>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 border m-6">
+            <h5>Comment utiliser StockManagement ?</h5>
+            <ol>
+                <li>Ajouter vos stockages et vos catégories de produit</li>
+                <li>Ajouter vos produits</li>
+                <li>L'application génère les alertes automatiquement</li>
+            </ol>
+        </div>
+        <div class="col-lg-4 border m-6">
+            <partial name="~/Views/Shared/_RecentlyUpdatedProducts.cshtml" model="ViewBag.Products"></partial>
+        </div>
+        <div class="col-lg-4 border m-6">
+            <h5>Info sur la dernière alerte</h5>
+            @if (ViewBag.ProductInAlertCount > 0)
+            {
+                <p class="alert alert-info">Il y a @ViewBag.ProductInAlertCount produit(s) dans la dernière alerte.</p>
+            }
+            else
+            {
+                <p class="alert alert-success">Il n'y a pas de produit dans la dernière alerte.</p>    
+            }
+        </div>
+    </div>
+</div>

@@ -14,6 +14,37 @@ namespace StockManagement_Metier.Services
             _context = context;
         }
 
+        public async Task<int> FindAmountOfProductInLastAlert()
+        {
+            return await _context.Alerts
+                .OrderBy(o => o.CreatedAt)
+                .Take(1)
+                .Include(i => i.Products)
+                .Select(s => s.Products.Count)
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<List<ProductRecentlyUpdatedDTO>> FindRecentlyUpdatedOnes()
+        {
+            const int amountDisplayed = 5;
+
+            return await _context.Products
+                .OrderBy(o => o.UpdatedAt)
+                .Take(amountDisplayed)
+                .Where(w => w.UpdatedAt >= DateTime.Now.AddDays(-7))
+                .Include(i => i.Storage)
+                .Select(s => new ProductRecentlyUpdatedDTO
+                {
+                    Id = s.Id,
+                    Name = s.Name,
+                    UpdatedAt = s.UpdatedAt,
+                    Quantity = s.Quantity,
+                    MinQuantity = s.MinQuantity,
+                    StorageId = s.Storage.Id
+                })
+                .ToListAsync();
+        }
+
         public async Task<List<ProductListingDTO>> FindAllByStorage(int storageId)
         {
             return await _context.Products
@@ -48,19 +79,19 @@ namespace StockManagement_Metier.Services
             return await _context.Products
                 .Include(i => i.Storage)
                 .Include(i => i.Category)
-                .Where(w => search.Name != null ? search.Name == w.Name : true)
+                .Where(w => search.Name != null ? EF.Functions.Like(w.Name, $"%{search.Name}%") : true)
                 .Where(w => search.IdStorage != null ? search.IdStorage == w.Storage.Id : true)
                 .Where(w => search.IdCategory != null ? search.IdCategory == w.Category.Id : true)
                 .Select(s => new ProductListingDTO()
                 {
                     Id = s.Id,
                     Name = s.Name,
-                    Description= s.Description,
+                    Description = s.Description,
                     Quantity = s.Quantity,
                     MinQuantity = s.MinQuantity,
                     StorageName = s.Storage.Name,
                     CategoryName = s.Category.Name,
-                    IsEssential= s.IsEssential,
+                    IsEssential = s.IsEssential,
                 })
                 .ToListAsync();
         }

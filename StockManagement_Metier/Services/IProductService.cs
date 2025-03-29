@@ -13,5 +13,7 @@ namespace StockManagement_Metier.Services
         Task<string?> GetProductStorageName(int idStorage);
         Task UpdateProduct(ProductUpdateDTO dto);
         Task<List<ProductListingDTO>> Search(ProductSearchDTO search);
+        Task<List<ProductRecentlyUpdatedDTO>> FindRecentlyUpdatedOnes();
+        Task<int> FindAmountOfProductInLastAlert();
     }
 }
