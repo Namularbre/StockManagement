@@ -93,6 +93,7 @@ namespace StockManagement.Controllers
                 if (category.Products == null || category.Products != null && category.Products.Count == 0)
                 {
                     await _categoryService.Delete(category);
+                    return Ok();
                 }
 
                 return Unauthorized("Vous ne pouvez pas supprimer une catégorie qui contient des produits");

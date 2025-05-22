@@ -1,0 +1,24 @@
+services:
+  web:
+    build: ./StockManagment/.
+    container_name: stockmanagement-web-container
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - stockmanagement-network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: stockmanagement-db-container
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@Passw0rd
+      - MSSQL_PID=Express
+    networks:
+      - stockmanagement-network
+
+networks:
+  stockmanagement-network:
+    driver: bridge
