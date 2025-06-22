@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: stockmanagement-console-cronjob
+spec:
+  schedule: "0 10 * * 4" # Tous les jeudis à 10h00
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: stockmanagement-console
+            image: thomasstock/stockmanagement-console:1.0.0
+            env:
+            - name: ConnectionStrings__DefaultConnection
+              valueFrom:
+                secretKeyRef:
+                  name: db-connection-string
+                  key: ConnectionStrings__DefaultConnection
+          restartPolicy: OnFailure

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stockmanagement-web-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stockmanagement
+  template:
+    metadata:
+      labels:
+        app: stockmanagement
+    spec:
+      containers:
+      - name: stockmanagement
+        image: thomassazeratdev/stockmanagement-web:1.0.0
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - secretRef:
+            name: stockmanagement-secrets

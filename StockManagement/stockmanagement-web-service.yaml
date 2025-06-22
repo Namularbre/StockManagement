@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stockmanagement-web-service
+spec:
+  selector:
+    app: stockmanagement
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
