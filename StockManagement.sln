@@ -23,6 +23,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "�
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Traefik", "Traefik", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		values.yaml = values.yaml
+		strip-all-prefixes.yaml = strip-all-prefixes.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

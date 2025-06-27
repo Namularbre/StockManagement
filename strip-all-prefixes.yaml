@@ -1,0 +1,9 @@
+# This file defines a Traefik Middleware that strips all prefixes from the request path.
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: strip-all-prefixes
+spec:
+  replacePathRegex:
+    regex: ^/.*?(?=/|$)
+    replacement: ""

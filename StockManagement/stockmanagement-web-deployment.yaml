@@ -17,6 +17,11 @@ spec:
         image: thomassazeratdev/stockmanagement-web:1.0.0
         ports:
         - containerPort: 8080
-        envFrom:
-        - secretRef:
-            name: stockmanagement-secrets
+        env:
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: stockmanagement-secrets
+              key: ConnectionStrings__DefaultConnection
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"

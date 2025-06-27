@@ -50,6 +50,47 @@ StockManagement is a web and console application that helps you keep track of yo
 
    Replace `<your_OS>` with your operating system (e.g., `linux-x64`, `win-x64`, etc.).
 
+## Kubbernet Deployment
+
+To deploy the application on a Kubernetes cluster, follow these steps:
+
+First, ensure you have Docker and kubectl installed on your machine.
+Then, add MS SQl Server on kubernetes with the following command:
+```bash
+git clone https://github.com/Namularbre/mssqlserver2022-k8s.git
+cd mssqlserver2022-k8s
+kubectl apply -f statefulset.yaml
+```
+
+*Note: Make sure to create a secret containing the sa password. **don't keep the one that is on this repository** !*
+
+Then, you need to deploy the web application by running the following commands:
+```bash
+kubectl apply -f stockmanagement-web-deployment.yaml
+kubectl apply -f stockmanagement-web-service.yaml
+```
+
+Here, if you still use the default database password, you can use the secret file:
+```bash
+kubectl apply -f stockmanagement-web-secret.yaml
+```
+
+Or run this command to create your own secret:
+```bash
+kubectl create secret generic stockmanagement-web-secret --from-literal=ConnectionStrings__DefaultConnection="Server=mssqlserver;Database=StockManagement;User Id=sa;Password=your_password_here;"
+```
+Finally, you can deploy the console application by running the following commands:
+```bash
+kubectl apply -f stockmanagement-console-cronjob.yaml
+```
+
+Again, you can use the secret file or create your own secret for the console application:
+```bash
+kubectl apply -f stockmanagement-console-secret.yaml
+```
+
+Remember that the secrets in the secret files are only examples. You should create your own secrets with your own passwords.
+
 ## Usage
 
 - **Web Application**: Launch the web application for a user-friendly interface.

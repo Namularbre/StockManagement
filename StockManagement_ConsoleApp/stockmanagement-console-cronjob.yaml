@@ -10,11 +10,11 @@ spec:
         spec:
           containers:
           - name: stockmanagement-console
-            image: thomasstock/stockmanagement-console:1.0.0
+            image: thomassazeratdev/stockmanagement-console:1.0.0
             env:
             - name: ConnectionStrings__DefaultConnection
               valueFrom:
                 secretKeyRef:
-                  name: db-connection-string
+                  name: stockmanagement-console-secret
                   key: ConnectionStrings__DefaultConnection
           restartPolicy: OnFailure
