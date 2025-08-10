@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: stockmanagement-web-configmap
 data:
-    ASPNETCORE_PATHBASE: ""
+    ASPNETCORE_PATHBASE: "/stockmanagement"
