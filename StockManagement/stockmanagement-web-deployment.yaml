@@ -25,3 +25,8 @@ spec:
               key: ConnectionStrings__DefaultConnection
         - name: ASPNETCORE_ENVIRONMENT
           value: "Development"
+        - name: ASPNETCORE_BASEPATH
+          valueFrom:
+            configMapKeyRef:
+              name: stockmanagement-web-configmap
+              key: ASPNETCORE_PATHBASE
