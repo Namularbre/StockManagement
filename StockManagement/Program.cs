@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StockManagement_Persistance.Context;
 using StockManagement_Metier.Services;
+using Microsoft.IdentityModel.Tokens;
 
 internal class Program
 {
@@ -25,6 +26,13 @@ internal class Program
         builder.Services.AddScoped<ICategoryService, CategoryService>();
 
         var app = builder.Build();
+
+        var pathBase = Environment.GetEnvironmentVariable("ASPNETCORE_PATHBASE");
+
+        if (!pathBase.IsNullOrEmpty())
+        {
+            app.UsePathBase(pathBase);
+        }
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
