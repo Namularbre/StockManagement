@@ -29,9 +29,9 @@ internal class Program
 
         var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
-        string? pathBase = Environment.GetEnvironmentVariable("ASPNETCORE_PATHBASE");
+        var pathBase = Environment.GetEnvironmentVariable("ASPNETCORE_PATHBASE");
 
-        if (!pathBase.IsNullOrEmpty())
+        if (!string.IsNullOrEmpty(pathBase))
         {
             logger.LogInformation("Using path base: {PathBase}", pathBase);
             app.UsePathBase(pathBase);
